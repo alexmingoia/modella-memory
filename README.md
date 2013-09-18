@@ -1,5 +1,7 @@
 # modella-memory
 
+[![Build Status](https://secure.travis-ci.org/alexmingoia/modella.png?branch=master)](http://travis-ci.org/alexmingoia/modella)
+
 Memory persistence layer for [Modella](https://github.com/modella/modella/).
 Useful for development or as a reference implementation for Modella storage
 plugins.
