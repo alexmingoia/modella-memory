@@ -21,4 +21,14 @@ var User = modella('User');
 User.use(memory);
 ```
 
+## API
+
+### Model.find(id, fn(err, model))
+
+Find model with given `id`.
+
+### Model.all(fn(err, collection))
+
+Find all models.
+
 ## MIT Licensed
