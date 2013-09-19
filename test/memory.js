@@ -2,7 +2,7 @@
  * modella-memory tests
  */
 
-var modella = require('../../modella');
+var modella = require('../node_modules/modella');
 var should = require('should');
 
 describe('module', function() {
