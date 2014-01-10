@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "repo": "alexmingoia/modella-memory",
   "description": "Memory persistence plugin for Modella. Useful for development or as a bare bones sync plugin reference implentation.",
+  "main": "memory.js",
   "scripts": [
     "memory.js"
   ]
