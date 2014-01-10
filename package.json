@@ -1,7 +1,7 @@
 {
   "name": "modella-memory",
   "description": "Memory persistence layer for Modella. Useful for development or as a reference implementation for Modella storage plugins.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Alex Mingoia <talk@alexmingoia.com>",
   "homepage": "https://github.com/alexmingoia/modella",
   "repository": {
