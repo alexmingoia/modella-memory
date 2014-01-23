@@ -20,7 +20,7 @@ var memory = require('modella-memory');
 
 var User = modella('User');
 
-User.use(memory);
+User.use(memory());
 ```
 
 ## API
