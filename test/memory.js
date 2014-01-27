@@ -47,6 +47,12 @@ describe('plugin', function() {
     User.find.should.be.a('function');
     done();
   });
+  it('should extend Model with Model.get', function(done) {
+    User.should.have.property('get');
+    User.find.should.be.a('function');
+    done();
+  });
+
 });
 
 describe('Model', function(done) {

@@ -22,8 +22,8 @@ var memory = module.exports = function() {
     Model.save = memory.save;
     Model.update = memory.update;
     Model.remove = memory.remove;
-    Model.find = memory.find;
-    Model.all = memory.all
+    Model.find = Model.get = memory.find;
+    Model.all = memory.all;
     return Model;
   };
 };
