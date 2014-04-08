@@ -95,7 +95,7 @@ memory.find = function(id, fn) {
 memory.all = function(fn) {
   var results = [];
   for (var id in this.store) {
-    if (this.store.hasOwnProperty(id)) {
+    if (this.store.hasOwnProperty(id) && id !== '__autoIncrement') {
       results.push(this.store[id]);
     }
   }
