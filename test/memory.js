@@ -58,6 +58,8 @@ describe('plugin', function() {
 describe('Model', function(done) {
   var memory = require('..');
   var User = modella('User').use(require('..')()).attr('id');
+  var MongoUser = modella('User').use(require('..')()).attr('_id');
+  var BadUser = modella('User').use(require('..')()).attr('name');
 
   afterEach(function(done) {
     User.store = { __autoIncrement: 1 };
@@ -69,6 +71,26 @@ describe('Model', function(done) {
       var user = new User();
       user.save(function(err) {
         should.not.exist(err);
+        should.exist(user.primary());
+        should.exist(user.id());
+        done();
+      });
+    });
+
+    it('should detect a mongo style primary key "_id"', function(done) {
+      var user = new MongoUser();
+      user.save(function(err) {
+        should.not.exist(err);
+        should.exist(user.primary());
+        should.exist(user._id());
+        done();
+      });
+    });
+
+    it('should return an error if there is no id or _id on the model', function(done) {
+      var user = new BadUser();
+      user.save(function(err) {
+        should.exist(err);
         done();
       });
     });

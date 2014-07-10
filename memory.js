@@ -37,8 +37,11 @@ var memory = module.exports = function() {
 
 memory.save = function(fn) {
   var store = this.model.store;
-  if (!(this.id())) {
-    this.set({id: store.__autoIncrement});
+  if (!this.model.primaryKey) return fn(new Error("No primary key set on model"));
+  if (!(this.primary())) {
+    var setDoc = {};
+    setDoc[this.model.primaryKey] = store.__autoIncrement;
+    this.set(setDoc);
     store.__autoIncrement++;
   }
   store[this.primary()] = this;
